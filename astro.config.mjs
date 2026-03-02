@@ -6,7 +6,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://tomasastro.cz',
+  site: 'https://Lenny606.github.io',
+  base: '/one-page-web',
   output: 'static',
 
   i18n: {
