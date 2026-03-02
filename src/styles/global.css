@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Poppins", sans-serif;
+  
+  --color-brand-purple: #7000FF;
+  --color-brand-pink: #FF00CC;
+  --color-brand-blue: #00D4FF;
+  
+  --color-bg-dark: #0A0A10;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-white bg-bg-dark font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl;
+  }
+  
+  .glass-nav {
+    @apply bg-bg-dark/60 backdrop-blur-md border-b border-white/10;
+  }
+  
+  .btn-primary {
+    @apply relative px-8 py-3 rounded-full font-bold transition-all duration-300 overflow-hidden bg-white text-black hover:scale-105 active:scale-95 z-10;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 -z-10 bg-gradient-to-r from-brand-pink via-brand-purple to-brand-blue opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-primary:hover::before {
+    @apply opacity-100;
+  }
+  
+  .btn-primary:hover {
+    @apply text-white shadow-[0_0_20px_rgba(255,0,204,0.5)];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue via-brand-purple to-brand-pink;
+  }
+}
+
+/* Mesh gradient background animation */
+.bg-mesh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: var(--color-bg-dark);
+  overflow: hidden;
+}
+
+.bg-mesh::before, .bg-mesh::after, .bg-mesh-blob {
+  content: '';
+  position: absolute;
+  filter: blur(120px);
+  opacity: 0.6;
+  border-radius: 50%;
+  animation: float 20s infinite alternate ease-in-out;
+}
+
+.bg-mesh::before {
+  top: -10%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: var(--color-brand-purple);
+  animation-delay: 0s;
+}
+
+.bg-mesh::after {
+  bottom: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: var(--color-brand-blue);
+  animation-delay: -5s;
+}
+
+.bg-mesh-blob {
+  top: 20%;
+  right: 20%;
+  width: 40vw;
+  height: 40vw;
+  background: var(--color-brand-pink);
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10%, 10%) scale(1.1); }
+  100% { transform: translate(-10%, 20%) scale(0.9); }
+}

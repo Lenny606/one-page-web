@@ -1,0 +1,130 @@
+---
+const links = [
+    { name: "O nás", href: "#o-nas" },
+    { name: "Služby", href: "#sluzby" },
+    { name: "Benefity", href: "#benefity" },
+    { name: "Reference", href: "#reference" },
+    { name: "Proces", href: "#proces" },
+    { name: "FAQ", href: "#faq" },
+];
+---
+
+<header
+    class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300 py-4"
+    id="navbar"
+>
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <a href="#" class="text-2xl font-bold flex items-center gap-2">
+            <div
+                class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-blue to-brand-purple flex items-center justify-center font-black text-white"
+            >
+                N
+            </div>
+            <span>NexaCore</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+            <ul class="flex items-center gap-6">
+                {
+                    links.map((link) => (
+                        <li>
+                            <a
+                                href={link.href}
+                                class="text-sm font-medium text-white/70 hover:text-brand-blue transition-colors"
+                            >
+                                {link.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <a
+                href="#kontakt"
+                class="px-5 py-2 rounded-full text-sm font-bold bg-white/10 hover:bg-white/20 border border-white/20 transition-all"
+            >
+                Kontaktovat
+            </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="md:hidden text-white focus:outline-none"
+            id="mobile-menu-btn"
+            aria-label="Toggle menu"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div
+        class="md:hidden hidden bg-bg-dark/95 backdrop-blur-xl border-b border-white/10 absolute top-full left-0 right-0"
+        id="mobile-menu"
+    >
+        <ul class="flex flex-col p-6 gap-4">
+            {
+                links.map((link) => (
+                    <li>
+                        <a
+                            href={link.href}
+                            class="block text-lg font-medium text-white/80 hover:text-white mobile-link"
+                        >
+                            {link.name}
+                        </a>
+                    </li>
+                ))
+            }
+            <li>
+                <a
+                    href="#kontakt"
+                    class="block mt-4 px-5 py-3 text-center rounded-lg text-lg font-bold bg-white text-black mobile-link"
+                >
+                    Kontaktovat
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<script>
+    const navbar = document.getElementById("navbar");
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    // Shrink navbar on scroll
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            navbar?.classList.remove("py-4");
+            navbar?.classList.add("py-2", "shadow-lg");
+        } else {
+            navbar?.classList.add("py-4");
+            navbar?.classList.remove("py-2", "shadow-lg");
+        }
+    });
+
+    // Mobile menu toggle
+    mobileBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+    });
+
+    // Close mobile menu on click
+    mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu?.classList.add("hidden");
+        });
+    });
+</script>

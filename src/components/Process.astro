@@ -1,0 +1,64 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Discovery & Analýza",
+    description: "Začínáme hlubokým ponorem do vašeho byznysu. Zjistíme, kde vás tlačí bota, a navrhneme optimální technologické řešení a architekturu."
+  },
+  {
+    number: "02",
+    title: "Design & Prototypování",
+    description: "Vytvoříme interaktivní UX/UI design a wireframy. Vy si vše vyzkoušíte nanečisto, a my máme 100% jistotu, že splníme vaše očekávání."
+  },
+  {
+    number: "03",
+    title: "Agilní Vývoj",
+    description: "Programujeme ve sprintech. Každé 2 týdny vám ukazujeme funkční přírůstky aplikace. Máte tak neustálý přehled nad vývojem."
+  },
+  {
+    number: "04",
+    title: "Testing & Launch",
+    description: "Aplikaci podrobíme přísným QA a penetračním testům. Poté ji bezpečně nasadíme do produkčního prostředí."
+  },
+  {
+    number: "05",
+    title: "SLA & Podpora",
+    description: "Spuštěním to nekončí. Pokračujeme údržbou systému, aktualizacemi a rozvojem dalších funkcí dle vaší potřeby."
+  }
+];
+---
+
+<section id="proces" class="py-24 relative z-10">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <h2 class="text-brand-pink font-bold tracking-widest uppercase mb-2 text-sm">Proces spolupráce</h2>
+      <h3 class="text-4xl md:text-5xl font-bold mb-6">Jak uděláme z vaší vize <span class="text-gradient">realitu</span></h3>
+      <p class="text-lg text-white/70">
+        Transparentní postup bez skrytých poplatků a nepříjemných překvapení.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Connection line -->
+      <div class="hidden lg:block absolute top-[50%] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-brand-purple to-transparent -translate-y-1/2 z-0 opacity-50"></div>
+
+      <div class="grid lg:grid-cols-5 gap-8 lg:gap-4 relative z-10">
+        {steps.map((step) => (
+          <div class="relative group">
+            <div class="glass-card p-6 rounded-2xl h-full border-t flex flex-col mt-8 lg:mt-0 transition-transform duration-300 group-hover:-translate-y-4">
+              <!-- Number badge floating up half way -->
+              <div class="absolute -top-6 left-6 lg:left-1/2 lg:-translate-x-1/2 w-12 h-12 rounded-full bg-bg-dark border border-brand-pink flex items-center justify-center font-black text-brand-pink text-lg shadow-[0_0_15px_rgba(255,0,204,0.3)]">
+                {step.number}
+              </div>
+              
+              <div class="pt-8 text-center lg:text-left">
+                <h4 class="text-xl font-bold mb-3">{step.title}</h4>
+                <p class="text-sm text-white/60 leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+---
+const benefits = [
+    {
+        title: "Snížení IT nákladů o 30%",
+        description:
+            "Optimalizací cloudové infrastruktury a automatizací rutinních procesů šetříme našim klientům statisíce korun ročně.",
+        value: "30%",
+    },
+    {
+        title: "Rychlejší time-to-market",
+        description:
+            "Díky agilnímu vývoji a CI/CD pipelines nasazujeme nové funkce v průměru 2x rychleji než klasická IT oddělení.",
+        value: "2x",
+    },
+    {
+        title: "Škálovatelnost bez limitů",
+        description:
+            "Cloud-native architektura zaručuje, že s náhlým přívalem zákazníků už nikdy nespadnou vaše servery.",
+        value: "∞",
+    },
+    {
+        title: "100% SLA garance",
+        description:
+            "Pro kritické podnikové systémy nabízíme nepřetržitý dohled, pohotovost a smluvně garantovanou dostupnost.",
+        value: "100%",
+    },
+];
+---
+
+<section id="benefity" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- List side -->
+            <div class="order-2 lg:order-1 space-y-6">
+                {
+                    benefits.map((item, index) => (
+                        <div class="glass-card p-6 flex gap-6 items-start hover:border-brand-purple/50 transition-colors">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                <span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-blue to-brand-purple">
+                                    {item.value}
+                                </span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">
+                                    {item.title}
+                                </h4>
+                                <p class="text-white/60 leading-relaxed">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <!-- Text side -->
+            <div class="order-1 lg:order-2 space-y-8">
+                <div>
+                    <h2
+                        class="text-brand-blue font-bold tracking-widest uppercase mb-2 text-sm"
+                    >
+                        Proč my
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Konkurenční <span class="text-gradient">výhoda</span> pro
+                        vaše podnikání
+                    </h3>
+                </div>
+
+                <p class="text-lg text-white/70 leading-relaxed">
+                    Nekódujeme jen zadané funkce. Přemýšlíme v byznysových
+                    souvislostech. Náš přístup spojuje nejnovější technologické
+                    trendy s jasným zaměřením na ROI (návratnost investic).
+                </p>
+
+                <p class="text-lg text-white/70 leading-relaxed pb-4">
+                    Spoluprací s námi nezískáte jen dodavatele, ale
+                    strategického technologického partnera pro dlouhodobý růst.
+                </p>
+
+                <a
+                    href="#reference"
+                    class="inline-flex items-center gap-2 font-bold text-white group"
+                >
+                    Podívejte se na výsledky našich klientů
+                    <div
+                        class="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center group-hover:translate-x-2 transition-transform"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="2.5"
+                            stroke="currentColor"
+                            class="w-4 h-4"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

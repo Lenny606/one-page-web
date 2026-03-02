@@ -1,0 +1,58 @@
+---
+const faqs = [
+  {
+    question: "Jak dlouho trvá průměrný vývoj webové aplikace?",
+    answer: "Závisí to na složitosti. Jednoduché MVP (Minimum Viable Product) umíme dodat do 6–8 týdnů. Komplexní enterprise řešení obvykle zabere 3 až 6 měsíců. Přesný harmonogram vám dáme vždy po úvodní analýze."
+  },
+  {
+    question: "Pracujete s hotovými šablonami nebo píšete kód od nuly?",
+    answer: "Pro firemní weby můžeme využít moderní frameworky a šablony pro zrychlení vývoje (např. Astro nebo Next.js). Pro komplexní aplikace a SaaS produkty vždy navrhujeme architekturu a píšeme kód přímo na míru vašim procesům."
+  },
+  {
+    question: "Kdo vlastní zdrojový kód (source code) po dokončení?",
+    answer: "Jakmile je projekt plně uhrazen, veškerá majetková autorská práva a zdrojové kódy přechází na vás. Jste 100% vlastníci vašeho softwaru."
+  },
+  {
+    question: "Nabízíte i následnou správu a hosting?",
+    answer: "Ano, u většiny projektů zajišťujeme i cloudový hosting (AWS, Vercel) a SLA podporu. Staráme se o aktualizace, bezpečnostní patche a monitorování chodu 24/7."
+  },
+  {
+    question: "Jak probíhá fakturace a platby?",
+    answer: "Obvykle pracujeme na bázi měsíční fakturace podle odpracovaných hodin (Time & Material), nebo u menších projektů v režimu Fix-Price rozděleného do milníků (např. záloha, po designu, po spuštění)."
+  }
+];
+---
+
+<section id="faq" class="py-24 relative z-10">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-brand-purple font-bold tracking-widest uppercase mb-2 text-sm">FAQ</h2>
+      <h3 class="text-4xl font-bold">Často kladené <span class="text-gradient">otázky</span></h3>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, i) => (
+        <details class="glass-card group cursor-pointer" name="faq-accordion">
+          <!-- The summary acts as the clickable header -->
+          <summary class="flex justify-between items-center font-bold text-lg p-6 list-none hover:text-brand-pink transition-colors">
+            <span>{faq.question}</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <!-- The content that expands -->
+          <div class="px-6 pb-6 text-white/70 leading-relaxed border-t border-white/5 pt-4">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Remove default spoiler arrow */
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

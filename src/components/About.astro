@@ -1,0 +1,118 @@
+---
+---
+
+<section id="o-nas" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Content side -->
+            <div class="space-y-8">
+                <div>
+                    <h2
+                        class="text-brand-purple font-bold tracking-widest uppercase mb-2 text-sm"
+                    >
+                        O nás
+                    </h2>
+                    <h3 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Měníme <span class="text-gradient">složité výzvy</span> v
+                        jednoduchá řešení
+                    </h3>
+                </div>
+
+                <p class="text-lg text-white/70 leading-relaxed">
+                    NexaCore vznikl z jednoduché myšlenky: inovativní IT nemá
+                    být dostupné jen pro giganty, ale pro každou firmu s ambicí
+                    růst. Jsme tým seniorních vývojářů, architektů a
+                    technologických nadšenců.
+                </p>
+
+                <p class="text-lg text-white/70 leading-relaxed">
+                    Už více než 10 let navrhujeme cloudové systémy, vyvíjíme
+                    SaaS produkty na míru a zajišťujeme bezpečnost našim
+                    klientům napříč odvětvími. Vaše vize je náš kód.
+                </p>
+
+                <ul class="space-y-4 pt-4">
+                    {
+                        [
+                            "Tým 30+ certifikovaných specialistů",
+                            "Dodáno přes 150 IT projektů",
+                            "Individuální a transparentní přístup",
+                        ].map((item) => (
+                            <li class="flex items-center gap-3">
+                                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-blue/20 flex items-center justify-center text-brand-blue border border-brand-blue/30">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        class="w-4 h-4"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                </div>
+                                <span class="text-white/90 font-medium">
+                                    {item}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <!-- Image / Graphic side -->
+            <div class="relative">
+                <div class="glass-card p-2 md:p-6 rounded-3xl relativ z-10">
+                    <img
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="NexaCore Team"
+                        class="rounded-2xl w-full h-auto object-cover grayscale opacity-80 mix-blend-screen hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                    />
+
+                    <!-- Floating badge -->
+                    <div
+                        class="absolute -bottom-6 -left-6 glass-card p-4 rounded-xl flex items-center gap-4 animate-float border-white/20"
+                    >
+                        <div
+                            class="p-3 bg-brand-pink/20 text-brand-pink rounded-lg"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-8 h-8"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.59 14.37a6 6 0 01-5.84 7.36c-5.91.53-9.53-4.18-8.5-9.1.58-2.73 2.76-4.66 5.2-6.2m9.14 8.04c-.37-.8-1-1.48-1.78-2-.84-.56-1.85-.88-2.92-1m3.67 4.54l.04.02.01-.01c.21-.12.42-.25.62-.39"
+                                ></path>
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-xl font-black">10+ let</div>
+                            <div class="text-xs text-white/50 uppercase">
+                                Zkušeností v IT
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background blob -->
+                <div
+                    class="absolute -right-8 -top-8 w-64 h-64 bg-brand-purple/30 blur-[60px] rounded-full -z-10"
+                >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
